@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<script src="jquery-3.2.0.min.js"></script>
+<script>	
+	$(document).ready(function()
+	{
+    	var n=0;
+    	var x=true;
+    	//efectos en JQuery
+		$("#txt1").click(xxx);
+		function xxx()
+		{
+			$(this).hide();  //con this nos referimos al selector anteriormente referenciado
+		}
+		//o puede ser directamente
+		$("#txt1").click(function(){
+			$(this).hide(); //con hide() ocultamos un elemento
+		});
+		$("#txt2").click(function(){
+			$("#txt1").show(); //con show() motramos un elemento
+		});
+		$("#txt2").dblclick(function(){
+			$(this).hide(2000); //podemos ocultar/mostrar un elemento con efecto de duracion en milisegundos
+			//acepta milisegundos, slow o fast
+		});
+		$(".btn").click(function(){
+			$("#txt3").toggle(); //con toggle() ocultamos o mostramos segunel click es la union entre hide() y show()
+				//tiene el efecto de duracion igual de hide() o show()
+			if (n==0){
+				$(this).text("mostrar");
+				n=1;
+			}
+			else
+			{
+				$(this).text("ocultar");
+				n=0;
+			}
+		});
+		$(".btn2").click(function(){
+			if(x)
+			{
+				$("#txt3").slideUp(); //con slideDown deslizamos hacia abajo un elemento previamente oculto (disply : none)
+				$(this).text("slidedown");
+				x=false;
+			}
+			else
+			{
+				$("#txt3").slideDown(); //con slideDown deslizamos hacia abajo un elemento previamente oculto (disply : none)
+				$(this).text("slideup");
+				x=true;
+			}
+		});
+    });
+</script>
+</head>
+
+	<body>
+		<div id="txt1">
+        	<h1 class="enc1">primer encabezado</h1>
+            <p>este es un parrafo de prueba para todo lo que aprendamos y practiquemos en cuanto a javascript y su libreria jquery 			solo sera una base de lo que podamos hacer</p>
+        </div>
+        <div id="txt2">
+        	<h2>segundo encabezado</h2>
+            <p>La unidad de estado sólido, dispositivo de estado sólido o SSD (acrónimo inglés de Solid-State Drive) es un tipo de 			dispositivo de almacenamiento de datos que utiliza memoria no volátil, como la memoria flash, para almacenar datos, en 			lugar de los platos o discos magnéticos de las unidades de discos duros (HDD) convencionales.
+			En comparación con los discos duros tradicionales, las unidades de estado sólido son menos sensibles a los golpes al 							no tener partes móviles, son prácticamente inaudibles, y poseen un menor tiempo de acceso y de latencia, lo que se traduce en una 		mejora del rendimiento exponencial en los tiempos de carga de los sistemas operativos. En contrapartida, su vida útil es muy 		inferior, ya que tienen un número limitado de ciclos de escritura, pudiendo producirse la pérdida absoluta de los datos de forma inesperada e irrecuperable. Los SSD hacen uso de la misma interfaz SATA que los discos duros, por lo que son fácilmente intercambiables sin tener que recurrir a adaptadores o tarjetas de expansión para compatibilizarlos con el equipo.</p>
+        </div>
+        <div id="txt3">
+        	<h2>segundo encabezado</h2>
+            <p>este es otro parrafo de prueba para todo lo que aprendamos y practiquemos en cuanto a javascript y su libreria 				jquery solo sera una base de lo que podamos hacer, formara parte del relleno y no importa lo que aca diga <strong>ENTENDIDO!</strong></p>
+        </div>
+        <button class="btn">ocultar</button>
+        <br><br><br><br>
+        <button class="btn2">slideup</button>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lo de jquery en javascript</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		body
+		{
+			background-color: #41a3db;
+		}
+		.image1
+		{
+			width: 270px;
+			height: 300px;
+			padding-left: 100px;
+		}
+		.par
+		{
+			margin-left: 45px;
+			border-style: solid;
+			border-radius: 10px;
+			width: 400px;
+			padding: 10px;
+		}
+		.partes
+		{
+			border-style: solid;
+			border-radius: 10px;
+			padding: 10px;
+			margin-left: 15px;
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>LO DE JQUERY A JAVASCRIPT</h1>
+		</div>
+	</div>
+	<dvi class="container">
+		<div class="row">
+			<div class="col-md-4 par">
+				<p class="txt1" id="txt1">
+					Escribir actualmente un libro sobre tecnología infor-
+					mática  en  general  y  sobre  seguridad, en  particular,
+					es algo que parece carecer de sentido. La inmedia-
+					tez  con  que  se  puede  conseguir  gran  cantidad  de
+					información actualizada en Internet llevó a los libros
+					técnicos casi hasta la obsolescencia. Y quien lo dice
+					es una persona que hace más de diez años no publi-
+					ca  un  volumen  en  papel, en  parte, convencido  de
+					esta  situación  y,  en  parte,  llevado  por  las  pocas
+					ganas  de  hacer  el  enorme  esfuerzo  que  significa
+					concretar una obra de alto nivel de contenido. Pero
+					las  estructuras, reales  o  virtuales, existen  para  ser
+					cambiadas  o  modificadas.  Y  esto  es  lo  que  han
+					hecho mis amigos Federico Pacheco y Héctor Jara.
+				</p>
+				<button class="btn btn-success" id="btn1" onclick="ocultar()">ocultar</button>		
+			</div>
+			<div class="col-md-4 partes">
+				<p class="txt2">
+					Comencé por leer con entusiasmo un extenso capí-
+					tulo referido a ethical hacking, donde se presentan
+					todos los conceptos con total precisión, y luego con-
+					tinué  con  el  de  Infraestructura  de  redes,  que  me
+					resultó muy esclarecedor pese a las dificultades que
+					plantea  el  tema.  Este  impulso  me  provocó  leer  el
+					resto del libro en una mañana.
+				</p>
+				<br>
+				<img src="hacking-ucb.png" class="image1">
+				<br>
+				<br>
+				<center><button class="btn btn-warning" id="btn2" onclick="agregar()">crear abajo</button></center>	
+			</div>
+			<div class="col-md-4 partes">
+				<p class="txt3">
+					Para  hacerlo  más  gráfico,  podemos  hacer  algunas
+					analogías con cosas cotidianas. Imaginemos que va-
+					mos a consultar a un médico que se graduó con ho-
+					nores de la mejor facultad de medicina, que realizó
+					innumerables seminarios y cursos de especialización
+					y que es reconocido en su ambiente. Sin embargo, al
+					momento de ir a la consulta, no es lo que esperába-
+					mos. No vamos a dudar de su idoneidad, pero si no
+					nos sentimos cómodos, no obtendremos los mejores
+					resultados.  Algo  similar  sucede  cuando  queremos
+					aprender  algún  instrumento  musical.  Puede  ser  el
+					mejor pianista, guitarrista, etcétera, pero si no tene-
+					mos afinidad con su estilo.
+				</p>	
+			</div>
+		</div>
+	</dvi>
+	<script type="text/javascript">
+		var b1=document.getElementById("btn1");
+		var txt1=document.getElementById("txt1");
+		var n=0;
+		function ocultar()
+		{
+			if(n==0)
+			{
+				txt1.style.display="none";
+				b1.innerHTML="mostrar";
+				n=1;
+			}
+			else
+			{
+				txt1.style.display="block";
+				b1.innerHTML="ocultar";
+				n=0;
+			}
+		}
+
+		function agregar()
+		{
+			var contenedor=document.createElement("p");
+			var contenido=document.createTextNode("nuevo parrafo");
+			contenedor.appendChild(contenido);
+			contenedor.style.color="white";
+			var b1=document.getElementById("btn2");
+			document.body.insertBefore(contenedor,b1);
+		}
+	</script>
+</body>
+</html>

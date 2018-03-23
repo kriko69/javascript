@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+<div id="ii">
+<h1 id="hh">Contenido 1</h1>
+<p id="cc">este es un pinche parrafo de prueba para los nodos</p>
+</div>
+<script>
+var elemento = document.createElement("p"); //con document.createElement(elemento) reamos un etiqueta
+var contenido = document.createTextNode("contenido nuevo del parrafo recien creado"); //con document.createTextNode(contenido) creamos un contenido para el elemento
+elemento.appendChild(contenido); //insertamos el contenido al elemento
+var elemento1 = document.getElementById("cc"); //obtenemos un elemento
+elemento1.appendChild(elemento); //con appendChild posicionamos el elemento recien creado debajo del elemento seleccionado anteriormente
+var root = document.body; //obtenemos el elemento body
+var padre= document.getElementById("ii"); //obtenemos el padre
+var hijo=document.getElementById("hh"); //obtenemos el hijo
+root.insertBefore(elemento,padre); //indicamos, que el padre inserte antes del hijo el elemento
+padre.insertBefore(elemento,hijo);
+
+padre.removeChild(hijo); //eliminamos un hijo de un elemento padre
+
+padre.replaceChild(elemento,hijo); //reeemplazamos un hijo por un nuevo elemento
+
+
+//podemos cambiar todos las etiquetas <p> si queremos
+
+var listaNodos = document.querySelectorAll("p");
+var i;
+for(i=0;i<listaNodos.length;i++)
+{
+	listaNodos[i].style.color="red";
+}
+</script>
+</body>
+</html>

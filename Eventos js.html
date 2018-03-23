@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Documento sin título</title>
+	</head>
+	<body>
+    	<button id="evente1" onmouseover="fecha()" onmouseout="normal()">Fecha</button>
+    	<script>
+			//List de eventos
+			/*
+				DEL MOUSE
+				onclick = cuando se preciona un elemento
+				onmouseover = cuando el cursor se pone encima del elemento
+				onmouseout = cuando el cursor esta fuera del elemento
+				oncontextmenu = cuando se presiona click derecho dentro del elemento
+				ondblclick = cuando se hace doble click
+				onmousedown = cuando mantiene oprimido con el muose \
+																	 estos 2 se usan juntos para un mejor efecto
+				onmouseup = cuando deja de apretar con el mouse    /
+				onmouseenter = cuando el cursor se pone encima del elemento con el onmouseover
+				onmouseleave = cuando el cursor esta fuera del elemento con el onmouseout
+				onmousemove = ientras el cursor se mueve dentro del area del elemento
+				
+				DEL TECLADO
+				onkeydown = cuando se mantiene presionada cualquier tecla
+				onkeyup = cuando se suelta la tecla precionada
+				onkeypress = cuando se presiona una vez cualquier tecla
+				
+				DEL FRAME
+				onerror = cuando ocurre un problema con un archivo externo como una imagen
+									<img src="" onerror="normal()">
+				onloaded = cuando la pagina empieza a cargarse al inicio
+				onpageshow = cuando se esta iniciando la pagina, puede ser un alert para informar algo
+				onresize = cuando se cambia el tamano de un elemento o de toda la pagina (body) 
+				onscroll = cuando mueves el scroll de un elemento
+				
+				DEL FORMULARIO
+				onblur = funciona cuando llenar algun campo de texto en el formulario y despues haces click en otra parte
+				onfocus = cuando se presiona sobre algun elemento del formulario
+				onchange = cuando cambia de valor un elemento del formulario como el select
+				oninput = cuando escribes dentro de un campo de texto
+				oninvalid = cuando en un campo de texto pone algo invalido, por ejemplo si lo deja en blanco
+				onreset = cuando se oprime la tecla de reset del formulario
+				onsearch = cuando en el formulario el tipo search se pone algo para buscar y se apreta enter 
+				onselect = cuando se subraya un texto de un input text
+				onsubmit = cuando se apreta el boton de enviar
+				
+			*/
+			function fecha()
+			{
+				document.getElementById("evente1").innerHTML=Date();
+			}
+			function normal()
+			{
+				document.getElementById("evente1").innerHTML="Fecha";	
+			}
+		</script>
+	</body>
+</html>

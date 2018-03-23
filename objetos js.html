@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Objetos en javascript</title>
+	</head>
+	<body>
+		<center><h1>OBJETOS</h1></center>
+		<div>
+			<p id="datos"></p>
+		</div>
+		<script type="text/javascript">
+			//creamos un bjeto de la siguiente forma
+			var usuario = {
+				nombre : "chris",
+				apellido : "jimenez",
+				edad : 19
+			};
+			document.getElementById("datos").innerHTML="Nombre: "+usuario["nombre"]+"<br>Apellido: "+usuario["apellido"]+"<br>Edad: "+usuario["edad"];
+			//los objetos tambien tienen metodos
+			var carro{
+				color : "gris",
+				modelo : 2011,
+				marca : "toyota",
+				acelerar : function(){
+					//codigo de la funcion
+				}
+			};
+			
+		</script>
+	</body>
+</html>
